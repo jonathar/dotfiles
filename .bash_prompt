@@ -130,3 +130,8 @@ function prompt_command() {
 }
 
 PROMPT_COMMAND="prompt_command"
+
+# PYTHON
+source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/Envs
+mkdir -p $WORKON_HOME
