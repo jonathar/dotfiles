@@ -69,6 +69,7 @@ filetype plugin indent on
 syntax enable
 set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
 
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
