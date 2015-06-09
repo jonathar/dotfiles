@@ -68,7 +68,7 @@ filetype plugin indent on
 
 syntax enable
 set background=dark
-colorscheme railscasts
+colorscheme solarized
 
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
