@@ -157,3 +157,5 @@ function! CleverTab()
     endif
 endfunction
 inoremap <Tab> <C-R>=CleverTab()<CR>
+
+autocmd VimResized * :wincmd =
