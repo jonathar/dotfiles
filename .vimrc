@@ -30,6 +30,7 @@ Plugin 'dbakker/vim-projectroot'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Raimondi/delimitMate'
 Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end() 
 filetype plugin indent on 
