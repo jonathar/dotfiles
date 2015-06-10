@@ -30,6 +30,7 @@ Plugin 'dbakker/vim-projectroot'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Raimondi/delimitMate'
 Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end() 
 filetype plugin indent on 
@@ -165,3 +166,5 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+autocmd VimResized * :wincmd =
