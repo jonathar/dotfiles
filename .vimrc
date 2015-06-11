@@ -31,6 +31,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'Raimondi/delimitMate'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-runner'
+Plugin 'thoughtbot/vim-rspec'
 
 call vundle#end() 
 filetype plugin indent on 
@@ -113,7 +115,8 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap \ :ProjectRootExe :Ag<space>
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <leader>s :w<CR>
+nnoremap <leader>q :q<CR>
 
 " The Silver Searcher
 if executable('ag')
