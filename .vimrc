@@ -1,4 +1,5 @@
 set nocompatible
+runtime macros/matchit.vim
 filetype off 
 
 set rtp+=~/.vim/bundle/Vundle.vim
