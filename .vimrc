@@ -179,3 +179,13 @@ map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
+
+" Rspec Stuff
+let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+map <leader>fr :VtrFocusRunner<CR>
