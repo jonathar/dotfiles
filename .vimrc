@@ -26,6 +26,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-endwise'
 Plugin 'dbakker/vim-projectroot'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Raimondi/delimitMate'
@@ -33,12 +34,18 @@ Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-projectionist'
 
 call vundle#end() 
 filetype plugin indent on 
 
 if has('gui_running')
-	set guifont=Source\ Code\ Pro:h16 
+	set guifont=Source\ Code\ Pro:h16
 endif
 
 " Terminal settings
