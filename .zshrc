@@ -5,3 +5,5 @@ function _ruby_version() {
       echo "%{$fg[red]%}$(rvm_prompt_info)%{$reset_color%}"
   fi
 }
+
+cdpath=(~/dev/)
