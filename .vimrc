@@ -41,6 +41,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-projectionist'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'sjl/gundo.vim'
 
 call vundle#end() 
 filetype plugin indent on 
@@ -200,3 +201,4 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 map <leader>fr :VtrFocusRunner<CR>
+map <leader>ut :GundoToggle<CR>
