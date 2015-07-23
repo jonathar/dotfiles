@@ -5,3 +5,6 @@ ln -sf ~/dotfiles/snips ~/.vim/snips
 
 git config --global init.templatedir '~/dotfiles/.git_template'
 git config --global alias.ctags '!.git/hooks/ctags'
+
+# Install all vundle plugins
+vim +PluginInstall +qall
