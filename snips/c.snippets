@@ -1,0 +1,32 @@
+snippet if "if .. (if)"
+if (${1:/* condition */}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet ife "alas if .. else (ife)"
+if (${1:/* condition */}) {
+	${2}
+} else {
+	${3:/* else */}
+}
+endsnippet
+
+snippet for "for loop (for)"
+for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet fori "for int loop (fori)"
+for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet main "main() (main)"
+int main(int argc, char *argv[]) {
+	${VISUAL}${0}
+	return 0;
+}
+endsnippet

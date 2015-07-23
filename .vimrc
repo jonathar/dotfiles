@@ -75,7 +75,6 @@ set shiftround
 set expandtab
 set diffopt=vertical 
 
-syntax on
 filetype plugin indent on
 
 syntax enable
@@ -85,6 +84,10 @@ let g:solarized_termcolors=256
 
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
+
+let g:syntastic_always_populate_loc_list = 1
+
+autocmd Filetype c setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " Ruby mode
 autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
@@ -116,6 +119,7 @@ autocmd FileType html,css EmmetInstall
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
 
 " Leader config
 let mapleader = ","
