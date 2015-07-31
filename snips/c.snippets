@@ -1,7 +1,7 @@
 snippet if "if .. (if)"
 if (${1:/* condition */}) {
-	${VISUAL}${0}
-}
+	${VISUAL}${2}
+}${3}
 endsnippet
 
 snippet ife "alas if .. else (ife)"
@@ -9,7 +9,7 @@ if (${1:/* condition */}) {
 	${2}
 } else {
 	${3:/* else */}
-}
+}${4}
 endsnippet
 
 snippet for "for loop (for)"
@@ -26,7 +26,25 @@ endsnippet
 
 snippet main "main() (main)"
 int main(int argc, char *argv[]) {
-	${VISUAL}${0}
-	return 0;
+  ${VISUAL}${0}
+  return 0;
 }
+endsnippet
+
+snippet st "struct"
+struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
+  ${0:/* data */}
+};
+endsnippet
+
+snippet fun "function" b
+${1:void} ${2:function_name}(${3}) {
+	${VISUAL}${4}
+}${5}
+endsnippet
+
+snippet eli "else if .. (eli)"
+else if (${1:/* condition */}) {
+	${VISUAL}${2}
+}${3}
 endsnippet
