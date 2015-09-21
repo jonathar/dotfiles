@@ -37,6 +37,12 @@ struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
 };
 endsnippet
 
+snippet tdst "typedef struct"
+typedef struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
+  ${2:/* data */}
+} ${1/([A-Za-z0-9_]+).*/$1/};
+endsnippet
+
 snippet fun "function" b
 ${1:void} ${2:function_name}(${3}) {
 	${VISUAL}${4}
