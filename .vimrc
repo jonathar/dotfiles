@@ -17,7 +17,6 @@ Plugin 'tomtom/tlib_vim.git'
 Plugin 'sirver/ultisnips.git'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
 Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'tpope/vim-sleuth.git'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'honza/vim-snippets'
@@ -28,7 +27,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-endwise'
 Plugin 'dbakker/vim-projectroot'
-Plugin 'flazz/vim-colorschemes'
+Plugin 'chriskempson/base16-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -52,10 +51,8 @@ endif
 
 " Terminal settings
 set mouse=a
-set t_Co=256
+" set t_Co=256
 set clipboard=unnamed
-
-let &colorcolumn=join(range(81,999),",")
 
 " tab completion in command line
 set wildmode=longest,list,full
@@ -79,8 +76,12 @@ filetype plugin indent on
 
 syntax enable
 set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+colorscheme base16-railscasts
+" let g:solarized_termcolors=256
+highlight ColorColumn ctermbg=8 guibg=8
+highlight LineNr ctermbg=21 ctermfg=5
+
+set colorcolumn=80
 
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
@@ -189,7 +190,8 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-set cursorline
+:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:nnoremap <Leader>c :set cursorline!<CR>
 
 " automatic resizing of splitpanes
 autocmd VimResized * :wincmd =
@@ -213,5 +215,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-map <leader>fr :VtrFocusRunner<CR>
+map <leader>rf :VtrFocusRunner<CR>
+map <leader>ra :VtrAttachToPane<CR>
+map <leader>rm :VtrSendCommand(make clean all)<CR>
 map <leader>ut :GundoToggle<CR>
