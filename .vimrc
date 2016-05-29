@@ -78,8 +78,8 @@ syntax enable
 set background=dark
 colorscheme base16-railscasts
 " let g:solarized_termcolors=256
-highlight ColorColumn ctermbg=8 guibg=8
-highlight LineNr ctermbg=21 ctermfg=5
+" highlight ColorColumn ctermbg=8 guibg=8
+" highlight LineNr ctermbg=21 ctermfg=5
 
 set colorcolumn=80
 
