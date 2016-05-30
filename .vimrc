@@ -78,10 +78,11 @@ syntax enable
 set background=dark
 colorscheme base16-railscasts
 " let g:solarized_termcolors=256
-" highlight ColorColumn ctermbg=8 guibg=8
 " highlight LineNr ctermbg=21 ctermfg=5
 
-set colorcolumn=80
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=18 guibg=18
+highlight TabLineSel ctermbg=19 ctermfg=2
 
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
@@ -190,7 +191,7 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorLine   cterm=underline ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 :nnoremap <Leader>c :set cursorline!<CR>
 
 " automatic resizing of splitpanes
