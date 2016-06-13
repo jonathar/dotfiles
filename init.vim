@@ -80,6 +80,7 @@ noremap <C-Up> :lp<CR>
 noremap <C-Down> :lne<CR>
 nnoremap \ :ProjectRootExe :Ag<space>
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
 
 " Leader Mappings
 let mapleader = ","
@@ -97,6 +98,14 @@ map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+map <leader>rf :VtrFocusRunner<CR>
+map <leader>ra :VtrAttachToPane<CR>
+map <leader>rm :VtrSendCommand(make clean all)<CR>
+map <leader>ut :GundoToggle<CR>
 
 " The Silver Searcher Setup
 if executable('ag')
