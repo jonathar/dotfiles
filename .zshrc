@@ -9,3 +9,9 @@ function _ruby_version() {
 }
 
 cdpath=(~/dev/)
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+export EDITOR=nvim

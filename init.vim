@@ -40,6 +40,7 @@ call dein#add('tpope/vim-projectionist')
 call dein#add('Lokaltog/vim-easymotion')
 call dein#add('sjl/gundo.vim')
 call dein#add('Shougo/vimshell')
+call dein#add('fatih/vim-go')
 
 " <Required>
 call dein#end()
@@ -74,6 +75,7 @@ let &colorcolumn=join(range(81,999),",")
 autocmd Filetype c setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 autoindent
 
 " Key Mappings
 noremap <C-Up> :lp<CR>
@@ -86,7 +88,6 @@ let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
 let mapleader = ","
 nnoremap <leader><space> :noh<CR>
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
@@ -106,6 +107,14 @@ map <leader>rf :VtrFocusRunner<CR>
 map <leader>ra :VtrAttachToPane<CR>
 map <leader>rm :VtrSendCommand(make clean all)<CR>
 map <leader>ut :GundoToggle<CR>
+
+" Golang leader mapings
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gl :GoLint<CR>
+au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>s :GoDef<CR>
 
 " The Silver Searcher Setup
 if executable('ag')
