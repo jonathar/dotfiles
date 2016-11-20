@@ -17,3 +17,6 @@ git config --global alias.ctags '!.git/hooks/ctags'
 
 # Install all vundle plugins
 vim +PluginInstall +qall
+
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+/usr/libexec/PlistBuddy -c "Set :\"New Bookmarks\":0:\"Normal Font\" \"SauceCodeProNerdFont---Regular 14\""  ~/Library/Preferences/com.googlecode.iterm2.plist
