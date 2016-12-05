@@ -22,3 +22,5 @@ COMPANY_FILE="$HOME/.companyrc"
 if [ -f $COMPANY_FILE ]; then
   . $COMPANY_FILE
 fi
+
+. ~/dotfiles/.aliasrc
