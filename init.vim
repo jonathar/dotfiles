@@ -12,6 +12,8 @@ call dein#add('Shougo/dein.vim')
 " Plugins
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
+call dein#add('SirVer/ultisnips')
+call dein#add('honza/vim-snippets')
 call dein#add('tpope/vim-fugitive')
 call dein#add('jpo/vim-railscasts-theme')
 call dein#add('morhetz/gruvbox')
@@ -109,12 +111,26 @@ map <leader>rm :VtrSendCommand(make clean all)<CR>
 map <leader>ut :GundoToggle<CR>
 
 " Golang leader mapings
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
+au FileType go nmap <Leader>gdo <Plug>(go-doc)
 au FileType go nmap <Leader>gl :GoLint<CR>
-au FileType go nmap <Leader>e <Plug>(go-rename)
-au FileType go nmap <Leader>s :GoDef<CR>
+au FileType go nmap <Leader>gr <Plug>(go-rename)
+au FileType go nmap <Leader>gd :GoDef<CR>
+au FileType go nmap <Leader>gi <Plug>(go-info)
+au FileType go nmap <Leader>ga :GoAlternate!<CR>
+au FileType go nmap <Leader>dec :GoDeclsDir<CR>
+au FileType go nmap <Leader>de :GoDecls<CR>
+
+" Vimgo setup
+let g:go_auto_sameids = 1
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 " The Silver Searcher Setup
 if executable('ag')
@@ -163,3 +179,7 @@ endif
 
 " Misc
 autocmd BufWritePre *.py :%s/\s\+$//e
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
