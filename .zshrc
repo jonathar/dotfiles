@@ -16,3 +16,9 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export CDPATH=.:$GOPATH/src/github.com:$CDPATH
 
 export EDITOR=nvim
+
+# Setup employer specific environment
+COMPANY_FILE="$HOME/.companyrc"
+if [ -f $COMPANY_FILE ]; then
+  . $COMPANY_FILE
+fi
