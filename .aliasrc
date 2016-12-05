@@ -1,1 +1,2 @@
 alias hb='hub browse'
+alias rub='rubocop -aD'
