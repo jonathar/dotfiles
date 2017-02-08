@@ -35,6 +35,7 @@ call dein#add('tpope/vim-endwise')
 call dein#add('dbakker/vim-projectroot')
 call dein#add('christoomey/vim-tmux-runner')
 call dein#add('thoughtbot/vim-rspec')
+call dein#add('janko-m/vim-test')
 call dein#add('kana/vim-textobj-user')
 call dein#add('nelstrom/vim-textobj-rubyblock')
 call dein#add('vim-ruby/vim-ruby')
@@ -101,10 +102,13 @@ map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+
+" Ruby / Rails test setup
+let test#strategy = "vtr"
+map <Leader>tf :TestFile<CR>
+map <Leader>tn :TestNearest<CR>
+map <Leader>tl :TestLast<CR>
+map <Leader>ta :TestSuite<CR>
 map <leader>rf :VtrFocusRunner<CR>
 map <leader>ra :VtrAttachToPane<CR>
 map <leader>rm :VtrSendCommand(make clean all)<CR>
