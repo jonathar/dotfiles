@@ -1,3 +1,2 @@
 alias hb='hub browse'
 alias rub='rubocop -aD'
-alias gso= !sh -c 'git checkout --quiet HEAD; git fetch origin master:master; git checkout --quiet -'
