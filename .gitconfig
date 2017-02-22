@@ -1,0 +1,10 @@
+[init]
+	templatedir = ~/dotfiles/.git_template
+[alias]
+	ctags = !.git/hooks/ctags
+	sync = !sh -c 'git checkout --quiet --detach && git fetch origin master:master && git checkout --quiet -'
+[user]
+	email = jonathar@users.noreply.github.com
+	name = jonathar
+[url "git@github.com:"]
+	insteadOf = https://github.com/

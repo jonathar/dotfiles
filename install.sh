@@ -8,6 +8,7 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh |
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/.git-completion ~/.git-completion
+ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 if [ ! -h ~/.vim/snips ]; then
   ln -sf ~/dotfiles/snips ~/.vim/snips
 fi
