@@ -10,6 +10,7 @@ call dein#add('Shougo/dein.vim')
 " </Required>
 
 " Plugins
+call dein#add('diepm/vim-rest-console')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('SirVer/ultisnips')
@@ -125,6 +126,9 @@ au FileType go nmap <Leader>gi <Plug>(go-info)
 au FileType go nmap <Leader>ga :GoAlternate!<CR>
 au FileType go nmap <Leader>dec :GoDeclsDir<CR>
 au FileType go nmap <Leader>de :GoDecls<CR>
+
+" Vim rest console configs
+let g:vrc_allow_get_request_body = 1
 
 " Vimgo setup
 let g:go_auto_sameids = 1
