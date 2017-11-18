@@ -129,6 +129,9 @@ au FileType go nmap <Leader>de :GoDecls<CR>
 
 " Vim rest console configs
 let g:vrc_allow_get_request_body = 1
+let g:vrc_curl_opts={
+	\'--silent': ''
+\}
 
 " Vimgo setup
 let g:go_auto_sameids = 1
@@ -188,6 +191,5 @@ endif
 " Misc
 autocmd BufWritePre *.py :%s/\s\+$//e
 
-let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"

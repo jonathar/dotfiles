@@ -24,3 +24,6 @@ if [ -f $COMPANY_FILE ]; then
 fi
 
 . ~/dotfiles/.aliasrc
+
+# AWS cli python path
+export PATH=~/Library/Python/3.5/bin/:$PATH
