@@ -45,6 +45,10 @@ call dein#add('Lokaltog/vim-easymotion')
 call dein#add('sjl/gundo.vim')
 call dein#add('Shougo/vimshell')
 call dein#add('fatih/vim-go')
+call dein#add('jelera/vim-javascript-syntax')
+call dein#add('pangloss/vim-javascript')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('mxw/vim-jsx')
 
 " <Required>
 call dein#end()
@@ -74,6 +78,9 @@ set guifont=Sauce\ Code\ Pro\ Nerd\ Font:h14
 set encoding=utf8
 let &colorcolumn=join(range(81,999),",")
 :hi CursorLine   cterm=underline ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+
+" Javascript setup
+let g:jsx_ext_required = 0
 
 "Indentation Settings
 autocmd Filetype c setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
