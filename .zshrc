@@ -26,4 +26,9 @@ fi
 . ~/dotfiles/.aliasrc
 
 # AWS cli python path
-export PATH=~/Library/Python/3.5/bin/:$PATH
+export PATH=$PATH:~/Library/Python/3.5/bin/
+# Add userspace python bin/, prefer higher python versions
+for dir in ~/Library/Python/*/bin/(On); do export PATH=$PATH:$dir; done
+
+# Direnv
+eval "$(direnv hook zsh)"

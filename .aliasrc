@@ -1,2 +1,6 @@
 alias hb='hub browse'
+alias hb_deploy_stage='hub pull-request -b stage -h master -o'
+alias hb_deploy_prod='hub pull-request -b prod -h stage -o'
+alias hb_pr='hub pull-request -o'
 alias rub='rubocop -aD'
+alias gb_clean='for k in $(gb -a --merged |grep -v "\->");do gb -d $k; done'

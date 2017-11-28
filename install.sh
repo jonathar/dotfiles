@@ -13,6 +13,10 @@ if [ ! -h ~/.vim/snips ]; then
   ln -sf ~/dotfiles/snips ~/.vim/snips
 fi
 
+if [ ! -h ~/.config/nvim/snips ]; then
+  ln -sf ~/dotfiles/snips ~/.config/nvim/snips
+fi
+
 git config --global init.templatedir '~/dotfiles/.git_template'
 git config --global alias.ctags '!.git/hooks/ctags'
 

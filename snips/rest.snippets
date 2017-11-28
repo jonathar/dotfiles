@@ -1,0 +1,37 @@
+snippet get "generic get request"
+http://localhost:920${1}
+GET /${2}
+
+endsnippet
+
+snippet cati "cat indices"
+http://localhost:920${1}
+GET /_cat/indices?v&s=i:desc${2}
+
+endsnippet
+
+
+snippet s "search request"
+GET /${1::index}/_search
+{
+  "query": {
+    "bool": {
+      "must": {
+        ${2}
+      }
+    }
+  }
+}
+
+endsnippet
+
+snippet agg "aggregation query"
+"aggs": {
+  "${1:agg name}": {
+    "${2:agg type}": {
+      "${3:param}": ${4}
+    }
+  }
+}
+
+endsnippet

@@ -10,6 +10,7 @@ call dein#add('Shougo/dein.vim')
 " </Required>
 
 " Plugins
+call dein#add('robbles/logstash.vim')
 call dein#add('diepm/vim-rest-console')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
@@ -118,6 +119,8 @@ map <Leader>tn :TestNearest<CR>
 map <Leader>tl :TestLast<CR>
 map <Leader>ta :TestSuite<CR>
 map <leader>rf :VtrFocusRunner<CR>
+map <leader>sl :VtrSendLinesToRunner<CR>
+map <leader>or :VtrOpenRunner{'orientation': 'h', 'percentage': 50}<CR>
 map <leader>ra :VtrAttachToPane<CR>
 map <leader>rm :VtrSendCommand(make clean all)<CR>
 map <leader>ut :GundoToggle<CR>
@@ -200,3 +203,5 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
+let g:UltiSnipsSnippetsDir="~/.vim/snips"
