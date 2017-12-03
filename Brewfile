@@ -1,0 +1,8 @@
+tap "homebrew/core"
+tap "homebrew/bundle"
+brew "direnv"
+brew "neovim"
+brew "python"
+brew "python3"
+brew "reattach-to-user-namespace"
+brew "tmux"
