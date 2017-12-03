@@ -32,3 +32,9 @@ for dir in ~/Library/Python/*/bin/(On); do export PATH=$PATH:$dir; done
 
 # Direnv
 eval "$(direnv hook zsh)"
+
+function start_nvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
