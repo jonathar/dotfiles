@@ -12,7 +12,7 @@ cdpath=(~/dev/)
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/dev/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 export CDPATH=.:$GOPATH/src/github.com:$CDPATH
 
 export EDITOR=nvim
@@ -25,10 +25,12 @@ fi
 
 . ~/dotfiles/.aliasrc
 
-# AWS cli python path
-export PATH=$PATH:~/Library/Python/3.5/bin/
-# Add userspace python bin/, prefer higher python versions
-for dir in ~/Library/Python/*/bin/(On); do export PATH=$PATH:$dir; done
+if [ -d "~/Library/Python/3.5/" ]; then
+  # AWS cli python path
+  export PATH=$PATH:~/Library/Python/3.5/bin/
+  # Add userspace python bin/, prefer higher python versions
+  for dir in ~/Library/Python/*/bin/(On); do export PATH=$PATH:$dir; done
+fi
 
 # Direnv
 eval "$(direnv hook zsh)"
