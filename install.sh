@@ -17,6 +17,7 @@ if [ ! -d "$HOME/.nvm" ]; then
 fi
 
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.editrc ~/.editrc
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/.git-completion ~/.git-completion
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig

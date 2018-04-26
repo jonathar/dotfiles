@@ -1,0 +1,6 @@
+# Add the following lines to ~/.editrc
+
+
+bind "^R" em-inc-search-prev
+bind "^N" em-inc-search-next
+bind "^P" em-inc-search-prev

@@ -12,7 +12,7 @@ cdpath=(~/dev/)
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/dev/go
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$PATH
 export CDPATH=.:$GOPATH/src/github.com:$CDPATH
 
 export EDITOR=nvim
@@ -24,6 +24,11 @@ if [ -f $COMPANY_FILE ]; then
 fi
 
 . ~/dotfiles/.aliasrc
+
+PYTHON_DIR=`python -m site --user-base`/bin
+if [ -d $PYTHON_DIR ]; then
+  export PATH=$PATH:$PYTHON_DIR
+fi
 
 if [ -d "~/Library/Python/3.5/" ]; then
   # AWS cli python path
