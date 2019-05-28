@@ -21,6 +21,7 @@ ln -sf ~/dotfiles/.editrc ~/.editrc
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/.git-completion ~/.git-completion
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/.editrc ~/.editrc
 if [ ! -h ~/.vim/snips ]; then
   ln -sf ~/dotfiles/snips ~/.vim/snips
 fi
