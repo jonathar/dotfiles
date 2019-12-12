@@ -50,6 +50,15 @@ call dein#add('pangloss/vim-javascript')
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('mxw/vim-jsx')
 
+" Deoplete START
+call dein#add('Shougo/deoplete.nvim')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+let g:deoplete#enable_at_startup = 1
+" Deoplete END
+
 " <Required>
 call dein#end()
 filetype plugin indent on
@@ -201,4 +210,3 @@ endif
 
 " Misc
 autocmd BufWritePre *.py :%s/\s\+$//e
-
