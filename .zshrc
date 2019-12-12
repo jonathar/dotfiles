@@ -10,11 +10,6 @@ function _ruby_version() {
 
 cdpath=(~/dev/)
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/dev/go
-export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$PATH
-export CDPATH=.:$GOPATH/src/github.com:$CDPATH
-
 export EDITOR=nvim
 
 # Setup employer specific environment

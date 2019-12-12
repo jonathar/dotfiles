@@ -123,16 +123,16 @@ map <leader>sl :VtrSendLinesToRunner<CR>
 map <leader>sf :VtrSendFile<CR>
 map <leader>or :VtrOpenRunner{'orientation': 'h', 'percentage': 50}<CR>
 map <leader>ra :VtrAttachToPane<CR>
-map <leader>rm :VtrSendCommand(make clean all)<CR>
+map <leader>rr :VtrSendCommand<CR>
 map <leader>ut :GundoToggle<CR>
 let g:VtrUseVtrMaps = 1
 
 " Golang leader mapings
 au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gr <Plug>(go-run)
 au FileType go nmap <leader>gt <Plug>(go-test)
 au FileType go nmap <Leader>gdo <Plug>(go-doc)
 au FileType go nmap <Leader>gl :GoLint<CR>
-au FileType go nmap <Leader>gr <Plug>(go-rename)
 au FileType go nmap <Leader>gd :GoDef<CR>
 au FileType go nmap <Leader>gi <Plug>(go-info)
 au FileType go nmap <Leader>ga :GoAlternate!<CR>
