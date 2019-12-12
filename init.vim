@@ -14,7 +14,6 @@ call dein#add('robbles/logstash.vim')
 call dein#add('diepm/vim-rest-console')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
-call dein#add('SirVer/ultisnips')
 call dein#add('honza/vim-snippets')
 call dein#add('tpope/vim-fugitive')
 call dein#add('jpo/vim-railscasts-theme')
@@ -203,7 +202,3 @@ endif
 " Misc
 autocmd BufWritePre *.py :%s/\s\+$//e
 
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
-let g:UltiSnipsSnippetsDir="~/.vim/snips"
