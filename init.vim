@@ -15,6 +15,7 @@ call dein#add('diepm/vim-rest-console')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('honza/vim-snippets')
+call dein#add('SirVer/ultisnips')
 call dein#add('tpope/vim-fugitive')
 call dein#add('jpo/vim-railscasts-theme')
 call dein#add('morhetz/gruvbox')
@@ -59,6 +60,10 @@ endif
 let g:deoplete#enable_at_startup = 1
 " Deoplete END
 
+call dein#add('autozimu/LanguageClient-neovim', {
+    \ 'rev': 'next',
+    \ 'build': 'bash install.sh',
+    \ })
 " <Required>
 call dein#end()
 filetype plugin indent on
@@ -210,3 +215,28 @@ endif
 
 " Misc
 autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Language Server Client Setup BEGIN
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['/usr/local/bin/pyls']
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" Language Server Client Setup END
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='/Users/jonathar/.config/nvim/snips'
+
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
+let g:UltiSnipsSnippetsDir="~/.vim/snips"
