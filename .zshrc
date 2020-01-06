@@ -43,3 +43,5 @@ function start_nvm() {
 
 # Needed for OSX 10.15. See - https://stackoverflow.com/questions/58272830/python-crashing-on-macos-10-15-beta-19a582a-with-usr-lib-libcrypto-dylib
 export DYLD_LIBRARY_PATH=/usr/local/opt/openssl/lib:$DYLD_LIBRARY_PATH
+
+export PATH=$PATH:$(go env GOPATH)/bin
