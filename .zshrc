@@ -45,3 +45,4 @@ function start_nvm() {
 export DYLD_LIBRARY_PATH=/usr/local/opt/openssl/lib:$DYLD_LIBRARY_PATH
 
 export PATH=$PATH:$(go env GOPATH)/bin
+export GOROOT=$(go env GOPATH)

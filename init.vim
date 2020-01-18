@@ -50,6 +50,8 @@ call dein#add('jelera/vim-javascript-syntax')
 call dein#add('pangloss/vim-javascript')
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('mxw/vim-jsx')
+call dein#add('hashivim/vim-terraform')
+
 
 " Deoplete START
 call dein#add('Shougo/deoplete.nvim')
@@ -144,9 +146,8 @@ let g:VtrUseVtrMaps = 1
 au FileType go nmap <leader>gb <Plug>(go-build)
 au FileType go nmap <leader>gr <Plug>(go-run)
 au FileType go nmap <leader>gt <Plug>(go-test)
-au FileType go nmap <Leader>gdo <Plug>(go-doc)
+au FileType go nmap <Leader>gd :GoDoc<CR>
 au FileType go nmap <Leader>gl :GoLint<CR>
-au FileType go nmap <Leader>gd :GoDef<CR>
 au FileType go nmap <Leader>gi <Plug>(go-info)
 au FileType go nmap <Leader>ga :GoAlternate!<CR>
 au FileType go nmap <Leader>dec :GoDeclsDir<CR>
@@ -158,10 +159,12 @@ let g:vrc_curl_opts={
 	\'--silent': ''
 \}
 
-" Vimgo setup
+" vim-go setup
 let g:go_auto_sameids = 1
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_auto_type_info = 1 " Automatically get signature/type info for object under cursor
+au filetype go inoremap <expr> <silent> <tab> Smart_TabComplete()
 
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
@@ -240,3 +243,24 @@ let g:neosnippet#snippets_directory='/Users/jonathar/.config/nvim/snips'
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
 let g:UltiSnipsSnippetsDir="~/.vim/snips"
+
+function! Smart_TabComplete()
+  let line = getline('.')                         " current line
+
+  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
+                                                  " line to one character right
+                                                  " of the cursor
+  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
+  if (strlen(substr)==0)                          " nothing to match on empty string
+    return "\<tab>"
+  endif
+  let has_period = match(substr, '\.') != -1      " position of period, if any
+  let has_slash = match(substr, '\/') != -1       " position of slash, if any
+  if (!has_period && !has_slash)
+    return "\<C-X>\<C-P>"                         " existing text matching
+  elseif ( has_slash )
+    return "\<C-X>\<C-F>"                         " file matching
+  else
+    return "\<C-X>\<C-O>"                         " plugin matching
+  endif
+endfunction
